@@ -2,7 +2,6 @@ import {
   defineConfig,
   presetAttributify,
   presetIcons,
-  presetTypography,
   presetWebFonts,
   presetWind4,
   transformerDirectives,
@@ -24,7 +23,6 @@ export default defineConfig({
     presetWind4(),
     presetAttributify(),
     presetIcons({ scale: 1.2 }),
-    presetTypography(),
     presetWebFonts({
       fonts: {
         sans: 'DM Sans',
