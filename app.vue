@@ -1,5 +1,11 @@
 <template>
-  <div>
-    <h1>Hello, world</h1>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
+
+<style>
+html.dark {
+  color-scheme: dark;
+}
+</style>
