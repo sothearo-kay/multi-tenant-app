@@ -3,9 +3,8 @@ const tenantName = ref('');
 
 const goToTenant = async () => {
   if (tenantName.value) {
-    const currentHost = window.location.host;
-    const protocol = window.location.protocol;
-    const url = `${protocol}//${tenantName.value}.${currentHost}`;
+    const { protocol, host } = window.location;
+    const url = `${protocol}//${tenantName.value}.${host}`;
 
     await navigateTo(url, { external: true });
   }

@@ -4,8 +4,11 @@ export function useTenant() {
   const { hostname } = useRequestURL();
 
   if (hostname === OUR_DOMAIN) {
-    return null;
+    return { tenant: null, isValid: true };
   }
 
-  return hostname.replace(`.${OUR_DOMAIN}`, '');
+  const tenant = hostname.replace(`.${OUR_DOMAIN}`, '');
+  const valid = isValidTenant(tenant);
+
+  return { tenant, isValid: valid };
 }

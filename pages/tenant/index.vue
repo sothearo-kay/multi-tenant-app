@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const tenant = useTenant();
+const { tenant } = useTenant();
 </script>
 
 <template>
