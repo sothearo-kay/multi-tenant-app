@@ -1,4 +1,4 @@
-import { OUR_DOMAIN } from '~/constants/config';
+import { OUR_DOMAIN } from '~/constants';
 
 export function useTenant() {
   const { hostname } = useRequestURL();

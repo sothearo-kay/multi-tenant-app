@@ -12,6 +12,8 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
+  future: { compatibilityVersion: 4 },
+
   app: {
     head: {
       titleTemplate: '%s - App',

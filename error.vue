@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app';
-import { OUR_DOMAIN } from '~/constants/config';
+import { OUR_DOMAIN, PORT } from '~/constants';
 
 defineProps<{ error: NuxtError }>();
 
@@ -9,8 +9,7 @@ const isInvalidTenant = computed(() => !isValid);
 
 async function goBackHome() {
   const { protocol } = window.location;
-  const port = process.env.NODE_ENV === 'production' ? '' : ':3000';
-  const url = `${protocol}//${OUR_DOMAIN}${port}`;
+  const url = `${protocol}//${OUR_DOMAIN}${PORT}`;
 
   await navigateTo(url, { external: true });
 }
