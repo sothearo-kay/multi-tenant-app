@@ -1,13 +1,12 @@
-import { OUR_DOMAIN } from '~/constants';
-
 export function useTenant() {
+  const { domain } = useAppConfig();
   const { hostname } = useRequestURL();
 
-  if (hostname === OUR_DOMAIN) {
+  if (hostname === domain) {
     return { tenant: null, isValid: true };
   }
 
-  const tenant = hostname.replace(`.${OUR_DOMAIN}`, '');
+  const tenant = hostname.replace(`.${domain}`, '');
   const valid = isValidTenant(tenant);
 
   return { tenant, isValid: valid };
