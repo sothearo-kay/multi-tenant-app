@@ -1,12 +1,7 @@
+<script setup lang="ts"></script>
+
 <template>
   <div>
-    <h1>Hello, world</h1>
-
-    <ColorScheme placeholder="..." tag="span">
-      Color mode: <b>{{ $colorMode.preference }}</b>
-      <span v-if="$colorMode.preference === 'system'">
-        (<i>{{ $colorMode.value }}</i> mode detected)
-      </span>
-    </ColorScheme>
+    <h1>homepage</h1>
   </div>
 </template>

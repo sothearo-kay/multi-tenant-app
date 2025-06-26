@@ -1,0 +1,9 @@
+html,
+body {
+  min-height: 100vh;
+  --uno: font-sans;
+}
+
+.dark {
+  color-scheme: dark;
+}
