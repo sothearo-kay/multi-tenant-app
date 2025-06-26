@@ -5,12 +5,12 @@ import {
   presetWebFonts,
   presetWind4,
   transformerDirectives,
-  transformerVariantGroup
+  transformerVariantGroup,
 } from 'unocss';
 
 export default defineConfig({
   shortcuts: {
-    'border-base': 'border-gray-300 dark:border-gray-600'
+    'border-base': 'border-gray-300 dark:border-gray-600',
   },
   presets: [
     presetWind4(),
@@ -20,9 +20,9 @@ export default defineConfig({
       fonts: {
         sans: 'DM Sans',
         serif: 'DM Serif Display',
-        mono: 'DM Mono'
-      }
-    })
+        mono: 'DM Mono',
+      },
+    }),
   ],
-  transformers: [transformerDirectives(), transformerVariantGroup()]
+  transformers: [transformerDirectives(), transformerVariantGroup()],
 });

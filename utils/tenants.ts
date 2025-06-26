@@ -2,7 +2,7 @@ const validTenants = new Map([
   ['demo', { name: 'Demo Company', active: true }],
   ['test', { name: 'Test Corp', active: true }],
   ['ro', { name: 'RO Enterprise', active: true }],
-  ['acme', { name: 'Acme Inc', active: true }]
+  ['acme', { name: 'Acme Inc', active: true }],
 ]);
 
 export function isValidTenant(slug: string): boolean {
@@ -16,6 +16,6 @@ export function getTenantInfo(slug: string) {
 export function getAllTenants() {
   return Array.from(validTenants.entries()).map(([slug, info]) => ({
     slug,
-    ...info
+    ...info,
   }));
 }

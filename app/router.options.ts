@@ -7,7 +7,7 @@ export default <RouterConfig>{
 
     if (!tenant) {
       // Main domain: show only non-tenant routes
-      return routes.filter((route) => !isTenantRoute(route));
+      return routes.filter(route => !isTenantRoute(route));
     }
 
     if (!isValid) {
@@ -16,14 +16,16 @@ export default <RouterConfig>{
 
     // Tenant subdomain: show only tenant routes and normalize paths
     return routes.filter(isTenantRoute).map(normalizeRoute);
-  }
+  },
 };
 
-const isTenantRoute = (route: RouteRecordRaw) => route.path.match(/^\/tenant\/?/);
+function isTenantRoute(route: RouteRecordRaw) {
+  return route.path.match(/^\/tenant\/?/);
+}
 
-const normalizeRoute = (route: RouteRecordRaw) => {
+function normalizeRoute(route: RouteRecordRaw) {
   return {
     ...route,
-    path: route.path.replace(/^\/tenant\/?/, '/')
+    path: route.path.replace(/^\/tenant\/?/, '/'),
   };
-};
+}

@@ -7,13 +7,13 @@ defineProps<{ error: NuxtError }>();
 const { isValid } = useTenant();
 const isInvalidTenant = computed(() => !isValid);
 
-const goBackHome = async () => {
+async function goBackHome() {
   const { protocol } = window.location;
   const port = process.env.NODE_ENV === 'production' ? '' : ':3000';
   const url = `${protocol}//${OUR_DOMAIN}${port}`;
 
   await navigateTo(url, { external: true });
-};
+}
 </script>
 
 <template>
@@ -23,11 +23,15 @@ const goBackHome = async () => {
 
     <div v-if="isInvalidTenant">
       <p>The tenant you're looking for doesn't exist.</p>
-      <button @click="goBackHome">Go Back Home</button>
+      <button @click="goBackHome">
+        Go Back Home
+      </button>
     </div>
 
     <div v-else>
-      <NuxtLink to="/">Go back home</NuxtLink>
+      <NuxtLink to="/">
+        Go back home
+      </NuxtLink>
     </div>
   </div>
 </template>
