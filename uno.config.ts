@@ -13,11 +13,7 @@ export default defineConfig({
     'border-base': 'border-gray-300 dark:border-gray-600'
   },
   presets: [
-    presetWind4({
-      theme: {
-        mode: 'on-demand'
-      }
-    }),
+    presetWind4(),
     presetAttributify(),
     presetIcons({ scale: 1.2 }),
     presetWebFonts({
