@@ -1,4 +1,9 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Multi-Tenant',
+  description: 'Access your tenant dashboard by entering your subdomain',
+});
+
 const tenantName = ref('');
 
 async function goToTenant() {

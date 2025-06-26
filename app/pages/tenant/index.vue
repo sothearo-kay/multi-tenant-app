@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const { tenant } = useTenant();
+
+useSeoMeta({
+  title: `${tenant} Dashboard`,
+  description: `Welcome to ${tenant} tenant dashboard`,
+});
 </script>
 
 <template>
